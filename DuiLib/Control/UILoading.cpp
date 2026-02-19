@@ -148,9 +148,9 @@ void CLoadingUI::PaintBkImage(HDC hDC)
 				m_Colors[intCounter], m_SpokeThickness);
 			intPosition++;
 		}
-		// »ñµÃ´°¿ÚµÄGraphics¶ÔÏó
+		// è·å¾—çª—å£çš„Graphicså¯¹è±¡
 		Graphics gh(hDC);
-		// ½«Ãè»­ºÃµÄCacheImage»­µ½´°¿ÚÉÏ
+		// å°†æç”»å¥½çš„CacheImageç”»åˆ°çª—å£ä¸Š
 		gh.DrawImage(img, m_rcItem.left, m_rcItem.top);
 		delete img;
 	}

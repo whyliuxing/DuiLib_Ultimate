@@ -32,7 +32,7 @@ namespace DuiLib {
 	class UILIB_API CRenderEngine
 	{
 	public:
-		// Í¼Æ¬¼ÓÔØ
+		// å›¾ç‰‡åŠ è½½
 #ifdef USE_XIMAGE_EFFECT
 		static CxImage *LoadGifImageX(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0);
 #endif
@@ -45,25 +45,25 @@ namespace DuiLib {
 		static bool DrawImageInfo(HDC hDC, CPaintManagerUI* pManager, const RECT& rcItem, const RECT& rcPaint, const TDrawInfo* pDrawInfo, HINSTANCE instance = NULL);
 		static bool DrawImageString(HDC hDC, CPaintManagerUI* pManager, const RECT& rcItem, const RECT& rcPaint, LPCTSTR pStrImage, LPCTSTR pStrModify = NULL, HINSTANCE instance = NULL);
 
-		// Gdiplus»æÖÆ
+		// Gdiplusç»˜åˆ¶
 		static TImageInfo* GdiplusLoadImage(STRINGorID bitmap, LPCTSTR type = NULL, DWORD mask = 0, HINSTANCE instance = NULL);
 		static void GdiplusDrawImage(HDC hDC, Gdiplus::Image* image, const RECT& rc, const RECT& rcPaint, const RECT& rcBmpPart, bool bAlpha, UINT uFade = 255, UINT uRotate = 0);
 		static void GdiplusDrawText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText, DWORD dwTextColor, int iFont, UINT uStyle);
 
-		// ÒÔÏÂº¯ÊıÖĞµÄÑÕÉ«²ÎÊıalphaÖµÎŞĞ§
-		// Í¼Ôª»æÖÆ
+		// ä»¥ä¸‹å‡½æ•°ä¸­çš„é¢œè‰²å‚æ•°alphaå€¼æ— æ•ˆ
+		// å›¾å…ƒç»˜åˆ¶
 		static void DrawColor(HDC hDC, const RECT& rc, DWORD color);
 		static void DrawGradient(HDC hDC, const RECT& rc, DWORD dwFirst, DWORD dwSecond, bool bVertical, int nSteps);
 		static void DrawLine(HDC hDC, const RECT& rc, int nSize, DWORD dwPenColor,int nStyle = PS_SOLID);
 		static void DrawRect(HDC hDC, const RECT& rc, int nSize, DWORD dwPenColor,int nStyle = PS_SOLID);
 		static void DrawRoundRect(HDC hDC, const RECT& rc, int width, int height, int nSize, DWORD dwPenColor,int nStyle = PS_SOLID);
 
-		// ×ÖÌå»æÖÆ
+		// å­—ä½“ç»˜åˆ¶
 		static void DrawText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText,DWORD dwTextColor, int iFont, UINT uStyle, DWORD dwTextBKColor);
 		static void DrawText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText, DWORD dwTextColor, int iFont, UINT uStyle);
 		static void DrawHtmlText(HDC hDC, CPaintManagerUI* pManager, RECT& rc, LPCTSTR pstrText, DWORD dwTextColor, RECT* pLinks, CDuiString* sLinks, int& nLinkRects, int iFont, UINT uStyle);
 
-		// ¸¨Öúº¯Êı
+		// è¾…åŠ©å‡½æ•°
 		static void CheckAlphaColor(DWORD& dwColor);
 		static DWORD AdjustColor(DWORD dwColor, short H, short S, short L);
 

@@ -41,12 +41,12 @@ protected:
 	int                 m_nTime;
 	bool				m_bStop;
 
-	int m_NumberOfSpoke;//辐条数量
-	int m_SpokeThickness;//辐条粗细
+	int m_NumberOfSpoke;//杈愭潯鏁伴噺
+	int m_SpokeThickness;//杈愭潯绮楃粏
 	int m_ProgressValue;//------------------------
-	int m_OuterCircleRadius;//外圈
-	int m_InnerCircleRadius;//内圈
-	Gdiplus::PointF m_CenterPoint;//二维平面的点
+	int m_OuterCircleRadius;//澶栧湀
+	int m_InnerCircleRadius;//鍐呭湀
+	Gdiplus::PointF m_CenterPoint;//浜岀淮骞抽潰鐨勭偣
 	Gdiplus::Color m_Color;
 	Gdiplus::Color* m_Colors;
 	double* m_Angles;
