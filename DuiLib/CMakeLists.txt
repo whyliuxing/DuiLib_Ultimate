@@ -31,4 +31,5 @@ set_target_properties(DuiLib PROPERTIES
     DEBUG_POSTFIX ""
     OUTPUT_NAME "DuiLib"
 )
-
+# 使用父目录作为 include 路径，使消费者可写 #include "DuiLib/UIlib.h"，避免与其他库的 UIlib.h 冲突
+target_include_directories(DuiLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/..)
