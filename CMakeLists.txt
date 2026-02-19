@@ -23,8 +23,14 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-# 选项：是否构建 Demos（默认 OFF，作为库引入时不构建）
-option(BUILD_DEMOS "Build DuiLib demos" OFF)
+# 选项：是否构建 Demos
+# 独立作为 project 运行时默认 ON，作为子项目被 add_subdirectory 引入时默认 OFF
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+  set(_default_build_demos ON)   # 顶层项目，默认构建 demo
+else()
+  set(_default_build_demos OFF)  # 子项目，默认不构建 demo
+endif()
+option(BUILD_DEMOS "Build DuiLib demos" ${_default_build_demos})
 # 选项：DuiLib 构建为动态库还是静态库（默认 OFF = 静态库）
 option(BUILD_SHARED_DUILIB "Build DuiLib as shared library (DLL)" OFF)
 
