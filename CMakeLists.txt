@@ -23,6 +23,16 @@ file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
+# 资源数据目录：优先使用 data，若不存在则使用 bin（向后兼容）
+if(EXISTS ${CMAKE_SOURCE_DIR}/data)
+  set(DUILIB_DATA_DIR ${CMAKE_SOURCE_DIR}/data CACHE PATH "DuiLib resource data directory (skin, plugins, etc.)")
+elseif(EXISTS ${CMAKE_SOURCE_DIR}/bin)
+  set(DUILIB_DATA_DIR ${CMAKE_SOURCE_DIR}/bin CACHE PATH "DuiLib resource data directory (skin, plugins, etc.)")
+  message(STATUS "Using bin as data dir - rename to 'data' for the new layout")
+else()
+  message(WARNING "Neither data nor bin directory found - demos may fail to find skin resources")
+endif()
+
 # 选项：是否构建 Demos
 # 独立作为 project 运行时默认 ON，作为子项目被 add_subdirectory 引入时默认 OFF
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)

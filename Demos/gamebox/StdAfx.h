@@ -15,6 +15,7 @@
 
 using namespace DuiLib;
 
+#ifndef CMAKE
 #ifdef _DEBUG
 #   ifdef _UNICODE
 #       pragma comment(lib, "..\\..\\lib\\DuiLib_d.lib")
@@ -27,6 +28,7 @@ using namespace DuiLib;
 #   else
 #       pragma comment(lib, "..\\..\\lib\\DuiLibA.lib")
 #   endif
+#endif
 #endif
 
 //{{AFX_INSERT_LOCATION}}

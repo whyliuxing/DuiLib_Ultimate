@@ -11,7 +11,7 @@
 #include <malloc.h>
 #include <memory.h>
 #include <tchar.h>
-
+#include <string>
 
 // TODO: 在此处引用程序需要的其他头文件
 #include "..\..\DuiLib\UIlib.h"
@@ -24,12 +24,7 @@ using namespace DuiLib;
 
 #pragma warning(disable:4192)
 
-#ifdef _UNICODE
-	typedef std::wstring	tstring;
-#else
-	typedef std::string		tstring;
-#endif
-
+#ifndef CMAKE
 #ifdef _DEBUG
 #   ifdef _UNICODE
 #       pragma comment(lib, "..\\..\\lib\\DuiLib_d.lib")
@@ -42,4 +37,11 @@ using namespace DuiLib;
 #   else
 #       pragma comment(lib, "..\\..\\lib\\DuiLibA.lib")
 #   endif
+#endif
+#endif
+
+#ifdef _UNICODE
+	typedef std::wstring	tstring;
+#else
+	typedef std::string		tstring;
 #endif
