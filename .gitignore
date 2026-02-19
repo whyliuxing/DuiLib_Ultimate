@@ -40,3 +40,5 @@ DuiLib2015.VC.db
 DuiLib2015.sln
 Demos/ADMonSetup/Debug/
 .vs/
+build/
+.history/

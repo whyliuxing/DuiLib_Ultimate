@@ -13,32 +13,32 @@ namespace DuiLib
         //maxpage="20,6"
         void SetMaxPages(int nPages, int nShowNum = 6);
         void SetMaxChar(int nNum = 2);
-        //设置字体[font="1"]
+        //璁剧疆瀛椾綋[font="1"]
         void SetFont(int nFont);
 
-        //设置页码选中的颜色[pageselectedtextcolor]
+        //璁剧疆椤电爜閫変腑鐨勯鑹瞇pageselectedtextcolor]
         void SetPageSelectedTextColor(DWORD cr = 0xFF4EB857);
-        //设置选中的页按钮背景色[pageselectedbkcolor]
+        //璁剧疆閫変腑鐨勯〉鎸夐挳鑳屾櫙鑹瞇pageselectedbkcolor]
         void SetPageSelectedBkColor(DWORD cr = 0x00000000);
 
-        //设置页码文字颜色[pagetextcolor]
+        //璁剧疆椤电爜鏂囧瓧棰滆壊[pagetextcolor]
         void SetPageNormalTextColor(DWORD cr = 0xff000000);
-        //设置按钮背景颜色[pagebkcolor]
+        //璁剧疆鎸夐挳鑳屾櫙棰滆壊[pagebkcolor]
         void SetPageBkColor(DWORD cr = 0x00000000);
 
-        //设置hot按钮背景色[pagehotbkcolor]
+        //璁剧疆hot鎸夐挳鑳屾櫙鑹瞇pagehotbkcolor]
         void SetPageHotBkColor(DWORD cr = 0x00000000);
-        //设置hot字体颜色[pagehottextcolor]
+        //璁剧疆hot瀛椾綋棰滆壊[pagehottextcolor]
         void SetPageHotTextColor(DWORD cr = 0x00000000);
 
 
-        //设置页码按钮的大小[pagesize="30,30"]
+        //璁剧疆椤电爜鎸夐挳鐨勫ぇ灏廩pagesize="30,30"]
         void SetPageNoSize(int w = 30, int h = 30);
-        //设置goto按钮的大小[gotoeditsize="1,1"]
+        //璁剧疆goto鎸夐挳鐨勫ぇ灏廩gotoeditsize="1,1"]
         void SetGotoEditSize(int w = 30, int h = 26);
-        //设置GotoEdit边框颜色[gotoeditbordercolor="0x00000000"]
+        //璁剧疆GotoEdit杈规棰滆壊[gotoeditbordercolor="0x00000000"]
         void SetGotoEditBorderColor(DWORD cr = 0x00000000);
-        //设置GotoEdit边框的大小[gotoeditbordersize="1"]
+        //璁剧疆GotoEdit杈规鐨勫ぇ灏廩gotoeditbordersize="1"]
         void SetGotoEditBorderSize(int size = 1);
 
     public:
@@ -87,7 +87,7 @@ namespace DuiLib
         CButtonUI* m_BtnGoto;
         CEditUI* m_EdtPageNo;
 
-        COptionUI* m_ConCurSel;    //当前是第几页
+        COptionUI* m_ConCurSel;    //褰撳墠鏄鍑犻〉
     };
 }
 #endif //__UIPageControl_H
